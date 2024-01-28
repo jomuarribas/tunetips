@@ -13,9 +13,9 @@ app.get('/scrape/:search', async (req, res) => {
     const url = `https://www.deezer.com/search/${req.params.search}/album`;
 
     const browser = await puppeteer.launch({
-      headless: true,
+      headless: "new",
       defaultViewport: null,
-      executablePath: '/path/to/chrome',
+      executablePath: '/path/a/chrome',
       args: ['--no-sandbox']
     });
 
