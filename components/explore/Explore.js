@@ -54,7 +54,7 @@ export const Explore = () => {
     loadResponse.innerHTML = "Cargando discos..."
     searchAlbums.appendChild(loadResponse);
     try {
-      const response = await fetch(`http://localhost:3001/scrape/${e.target.form[0].value}`);
+      const response = await fetch(`https://tunetips-webscraper.onrender.com/scrape/${e.target.form[0].value}`);
       const data = await response.json();
 
       if (response.ok) {

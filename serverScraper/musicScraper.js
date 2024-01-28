@@ -7,10 +7,7 @@ const app = express();
 const port = 3001;
 
 app.use(cors());
-app.use(express.static(path.join(__dirname, 'dist')));
-app.get('/', (req, res, next) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-})
+
 app.get('/scrape/:search', async (req, res) => {
   try {
     const url = `https://www.deezer.com/search/${req.params.search}/album`;
