@@ -1,0 +1,41 @@
+#header {
+  display: flex;
+  margin: 0 auto;
+  max-width: 1200px;
+  margin-top: 10px;
+  border-bottom: 1px solid white;
+  height: 70px;
+}
+
+.logoHeader {
+  display: flex;
+  height: 100%;
+}
+
+.infoDiv {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+}
+
+.infoDiv > h3 {
+  color: white;
+  margin-bottom: 0;
+  text-align: center;
+  font-size: 15px;
+}
+
+.infoDiv > span {
+  color: #bcc603;
+  margin-left: 10px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.infoDiv > span:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+  transition: 200ms;;
+}

@@ -1,0 +1,129 @@
+.comunity {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.43);
+  border-radius: 0 0 20px 20px;
+}
+
+.comunity > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: white;
+  width: 100%;
+}
+
+.comunityImgDiv {
+  margin-left: 20px;
+}
+
+.comunityImgDiv > img {
+  border-radius: 100%;
+  border: 1px solid white;
+  box-shadow: #bcc603 0px 0px 15px -2px;
+  width: 150px;
+}
+
+.comunityInfoDiv {
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
+  margin-left: 8%;
+}
+
+.comunityInfoDiv > h3 {
+  font-size: 19px;
+  color: #bcc603;
+}
+
+.comunityInfoDiv > p:last-child {
+  font-size: 13px;
+}
+
+.allUsers {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 20px;
+  border-top: #bcc603 1px solid;
+  border-bottom: #bcc603 1px solid;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.allUsers > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+}
+
+.allUsers > div > img {
+  border-radius: 100%;
+  border: 1px solid #bcc603;
+  width: 100%;
+}
+
+.allUsers > div > p {
+  margin: 1px;
+  font-size: 14px;
+}
+
+.textPostsDiv {
+  display: flex;
+  flex-direction: column;
+}
+.textPostsDiv > div:nth-child(even) {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+  background-color: #bcc60308;
+  width: 100%;
+  justify-content: center;
+  margin: 1px;
+}
+
+.textPostsDiv > div:nth-child(odd) {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  gap: 15px;
+  align-items: end;
+  margin-bottom: 10px;
+}
+
+.textPostsDiv > div > img {
+  width: 60px;
+  border-radius: 100%;
+}
+
+.posts {
+  width: 100%;
+  padding-top: 20px;
+}
+
+.posts > form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items:end;
+  gap: 20px;
+}
+
+.posts > form > textarea {
+  padding: 20px;;
+  border-radius: 20px;
+  max-width: 320px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+.posts > form > button {
+  margin: 0 auto;
+}
+

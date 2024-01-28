@@ -1,0 +1,76 @@
+.user {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+  background-color: rgba(0, 0, 0, 0.43);
+  border-radius: 0 0 20px 20px;
+}
+
+.userTitleDiv {
+  display: flex;
+  width: 100%;
+  color: #bcc603;
+  align-items: center;
+  justify-content: center;
+}
+
+.userImgDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.userImgDiv > img {
+  border-radius: 100%;
+  border: 1px solid white;
+  box-shadow: #bcc603 0px 0px 15px -2px;
+}
+
+#userForm2 {
+  text-align: center;
+}
+
+#userForm2 > p {
+  color: white;
+
+}
+
+#userForm2 > input {
+  color: white;
+  display: flex;
+}
+
+#userForm2 > button {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.userInfoDiv {
+  border-left: 1px dotted white;
+  margin-left: 30px;
+  color: white;
+  margin-top: 15px;
+  padding-left: 30px;
+  margin-bottom: 20px;
+}
+
+.userInfoDiv > button {
+  margin-top: 20px;
+}
+
+.userInfo {
+  color: #bcc603;
+}
+
+.deleteUser {
+  font-size: 15px;
+  cursor: pointer;
+}
+.deleteUser:hover {
+  font-size: 15px;
+  color: #bcc603;
+  transition: 200ms;
+}

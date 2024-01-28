@@ -1,0 +1,84 @@
+.discShelf {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 100%;
+  background-color: rgba(0, 0, 0, 0.43);
+  border-radius: 0 0 20px 20px;
+  padding-bottom: 20px;
+}
+
+.discShelf > img {
+  width: 150px;
+  border-radius: 100%;
+  margin: 0 auto;
+  margin-top: 20px;
+  border: 1px solid rgb(255, 255, 255);
+  box-shadow: #bcc603 0px 0px 15px -2px;
+}
+.discShelf > h3 {
+  color: white;
+  margin: 0 auto;
+  font-size: 15px;
+  margin-top: 15px;
+}
+
+.discShelfInfo {
+  color: white;
+  padding: 0px 25px;
+  margin-top: -10px;
+}
+
+.discShelfTitle {
+  color: #bcc603;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.myAlbums div {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  max-width: 250px;
+  height: 100%;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.018);
+  padding: 10px;
+  border-radius: 10px; 
+}
+.myAlbums {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  gap: 15px;
+}
+
+.myAlbums img {
+  width: 100%;
+  box-shadow: #bcc603 0px 0px 15px -7px;
+  border-radius: 10px;
+}
+.myAlbums p {
+  color: white;
+  margin-top: 5px;
+  font-size: 14px;
+  align-items: center;
+
+}
+
+.myAlbums h3 {
+  color: #bcc603;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+.myAlbums button {
+  font-size: 12px;
+}
+
+.albumId {
+  display: none;
+}
