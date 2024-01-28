@@ -4,7 +4,7 @@ const cors = require('cors');
 const path = require('path');
 
 const app = express();
-const port = 3001;
+const port = 3500;
 
 app.use(cors());
 
@@ -15,8 +15,7 @@ app.get('/scrape/:search', async (req, res) => {
     const browser = await puppeteer.launch({
       headless: "new",
       defaultViewport: null,
-      executablePath: '/path/a/chrome',
-      args: ['--no-sandbox']
+      args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
 
     const page = await browser.newPage();
