@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node musicScraper.js"
+    "start": "node musicScraper.js",
+    "build": "npm install"
   },
   "keywords": [],
   "author": "",
