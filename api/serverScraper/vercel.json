@@ -1,14 +1,8 @@
 {
-  "builds": [
-    {
-      "src": "./musicScraper.js",
-      "use": "@vercel/node"
+  "version": 2,
+  "functions": {
+    "/musicScraper.js": {
+      "runtime": "nodejs20.10.0"
     }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/"
-    }
-  ]
+  }
 }
