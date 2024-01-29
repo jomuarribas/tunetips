@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "./musicScraper.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ]
+}
