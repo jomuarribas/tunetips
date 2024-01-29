@@ -1,7 +1,7 @@
 export const getUser = async () => {
   const userId = localStorage.getItem('id').replace(/^"(.*)"$/, '$1');
   try {
-    const response = await fetch(`https://tunetips-api.onrender.com/api/users/${userId}`)
+    const response = await fetch(`http://localhost:3000/api/users/${userId}`)
     if (!response.ok) {
       throw new Error(`Error en la petición. Código de estado: ${response.status}`);
     }

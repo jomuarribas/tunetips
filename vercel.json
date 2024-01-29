@@ -1,0 +1,26 @@
+{
+  "functions": {
+    "api/index.js": {
+      "memory": 1024,
+      "maxDuration": 10
+    },
+    "api/serverScraper/musicScraper.js": {
+      "memory": 512,
+      "maxDuration": 10
+    }
+  },
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/dist"
+    },
+    {
+      "src": "/.*",
+      "dest": "api/app.js"
+    },
+    {
+      "src": "/.*",
+      "dest": "api/serverScraper/musicScraper.js"
+    }
+  ]
+}

@@ -54,13 +54,13 @@ export const discShelf = () => {
   const searchMyAlbums = async () => {
     myAlbums.innerHTML = '';
     try {
-      const response = await fetch(`https://tunetips-api.onrender.com/api/users/${localStorage.getItem('id').replace(/^"(.*)"$/, '$1')}`);
+      const response = await fetch(`http://localhost:3000/api/users/${localStorage.getItem('id').replace(/^"(.*)"$/, '$1')}`);
       const data = await response.json();
 
       if (response.ok) {
         const albums = data.albums;
         for (let album of albums) {
-          const response = await fetch(`https://tunetips-api.onrender.com/api/albums/${album}`);
+          const response = await fetch(`http://localhost:3000/api/albums/${album}`);
           const data = await response.json();
 
           const albumDiv = document.createElement('div');
@@ -86,7 +86,7 @@ export const discShelf = () => {
           buttonDel.addEventListener('click', async (e) => {
             e.preventDefault();
             try {
-              const response = await fetch(`https://tunetips-api.onrender.com/api/albums/${e.target.parentElement.children[4].innerText}`, {
+              const response = await fetch(`http://localhost:3000/api/albums/${e.target.parentElement.children[4].innerText}`, {
                 method: 'DELETE',
                 headers: {
                   'Authorization': 'Bearer ' + localStorage.getItem('token').replace(/^"(.*)"$/, '$1'),
@@ -105,7 +105,7 @@ export const discShelf = () => {
 
               if (response.ok) {
                 const response2 = await
-                  fetch(`https://tunetips-api.onrender.com/api/users/${localStorage.getItem('id').replace(/^"(.*)"$/, '$1')}/albums/${e.target.parentElement.children[4].innerText}`, {
+                  fetch(`http://localhost:3000/api/users/${localStorage.getItem('id').replace(/^"(.*)"$/, '$1')}/albums/${e.target.parentElement.children[4].innerText}`, {
                     method: 'DELETE',
                     headers: {
                       'Authorization': 'Bearer ' + localStorage.getItem('token').replace(/^"(.*)"$/, '$1'),

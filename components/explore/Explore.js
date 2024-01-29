@@ -54,7 +54,7 @@ export const Explore = () => {
     loadResponse.innerHTML = "Cargando discos..."
     searchAlbums.appendChild(loadResponse);
     try {
-      const response = await fetch(`https://tunetips-webscraper.onrender.com/scrape/${e.target.form[0].value}`);
+      const response = await fetch(`http://localhost:3500/scrape/${e.target.form[0].value}`);
       const data = await response.json();
 
       if (response.ok) {
@@ -80,7 +80,7 @@ export const Explore = () => {
             e.preventDefault();
             try {
               loaderOn();
-              const response = await fetch('https://tunetips-api.onrender.com/api/albums/', {
+              const response = await fetch('http://localhost:3000/api/albums/', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
@@ -106,7 +106,7 @@ export const Explore = () => {
 
               if (response.ok) {
                 const data = await response.json();
-                const response2 = await fetch(`https://tunetips-api.onrender.com/api/users/${localStorage.getItem('id').replace(/^"(.*)"$/, '$1')}/albums`, {
+                const response2 = await fetch(`http://localhost:3000/api/users/${localStorage.getItem('id').replace(/^"(.*)"$/, '$1')}/albums`, {
                   method: 'POST',
                   headers: {
                     'Content-Type': 'application/json',

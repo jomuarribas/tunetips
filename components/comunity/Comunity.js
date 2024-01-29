@@ -60,7 +60,7 @@ export const comunity = () => {
 
   const allUsersFunction = async () => {
     try {
-      const response = await fetch(`https://tunetips-api.onrender.com/api/users`, {
+      const response = await fetch(`http://localhost:3000/api/users`, {
         headers: {
           'Authorization': 'Bearer ' + localStorage.getItem('token').replace(/^"(.*)"$/, '$1'),
           'Content-Type': 'application/json'
@@ -96,17 +96,15 @@ export const comunity = () => {
 
   const textPosts = async () => {
     try {
-      const response = await fetch(`https://tunetips-api.onrender.com/api/posts/`, {
+      const response = await fetch(`http://localhost:3000/api/posts/`, {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer ' + localStorage.getItem('token').replace(/^"(.*)"$/, '$1')
         }
       });
       const posts = await response.json();
-      console.log(posts.length);
       const invertPosts = posts.reverse()
       for (const post of invertPosts) {
-        console.log(post);
         const postUserImgDiv = document.createElement('div');
         const postUserImg = document.createElement('img');
         postUserImg.src = post.user.img
@@ -145,7 +143,7 @@ export const comunity = () => {
   textButton.addEventListener("click", async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`https://tunetips-api.onrender.com/api/posts/`, {
+      const response = await fetch(`http://localhost:3000/api/posts/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -159,7 +157,7 @@ export const comunity = () => {
 
       if (response.ok) {
         const data = await response.json();
-        const response2 = await fetch(`https://tunetips-api.onrender.com/api/users/${localStorage.getItem('id').replace(/^"(.*)"$/, '$1')}/posts`, {
+        const response2 = await fetch(`http://localhost:3000/api/users/${localStorage.getItem('id').replace(/^"(.*)"$/, '$1')}/posts`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -184,8 +182,4 @@ export const comunity = () => {
       });
     }
   });
-
-
-
-
 };

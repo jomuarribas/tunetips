@@ -77,7 +77,7 @@ export const User = () => {
     e.preventDefault();
     try {
       loaderOn();
-      const response = await fetch(`https://tunetips-api.onrender.com/api/users/${localStorage.getItem('id').replace(/^"(.*)"$/, '$1')}`, {
+      const response = await fetch(`http://localhost:3000/api/users/${localStorage.getItem('id').replace(/^"(.*)"$/, '$1')}`, {
         method: 'DELETE',
         headers: {
           'Authorization': 'Bearer ' + localStorage.getItem('token').replace(/^"(.*)"$/, '$1'),
@@ -138,7 +138,7 @@ export const User = () => {
     e.preventDefault();
     try {
       loaderOn();
-      const response = await fetch(`https://tunetips-api.onrender.com/api/users/${localStorage.getItem('id').replace(/^"(.*)"$/, '$1')}`, {
+      const response = await fetch(`http://localhost:3000/api/users/${localStorage.getItem('id').replace(/^"(.*)"$/, '$1')}`, {
         method: 'PUT',
         body: new FormData(e.target.form),
         headers: {

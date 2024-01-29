@@ -51,7 +51,7 @@ export const register = () => {
     try {
       loaderOn();
       const formData = new FormData(userForm);
-      const response = await fetch('https://tunetips-api.onrender.com/api/users/register', {
+      const response = await fetch('http://localhost:3000/api/users/register', {
         method: 'POST',
         body: formData,
       });

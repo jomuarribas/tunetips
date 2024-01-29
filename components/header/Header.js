@@ -14,7 +14,7 @@ export const Header = () => {
   const logoDiv = document.createElement('div');
   logoDiv.className = 'logoHeader';
   const logo = document.createElement('img');
-  logo.src = "public/assets/images/logo_tunetips.webp";
+  logo.src = "assets/images/logo_tunetips.webp";
 
   header.appendChild(logoDiv);
   logoDiv.appendChild(logo);
