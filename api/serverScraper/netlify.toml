@@ -1,2 +1,2 @@
 [build]
-  command = "npm start"
+  command = "node musicScraper.js"
