@@ -8,7 +8,7 @@ const circlesRoutes = require("./src/api/routes/circle");
 const postsRoutes = require("./src/api/routes/post");
 const usersRoutes = require("./src/api/routes/user");
 const cors = require('cors');
-const { musicScraper } = require("./src/utils/musicScraper");
+const musicScraper = require("./src/utils/musicScraper");
 
 const app = express();
 
