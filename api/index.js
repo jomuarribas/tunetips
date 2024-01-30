@@ -8,6 +8,7 @@ const circlesRoutes = require("./src/api/routes/circle");
 const postsRoutes = require("./src/api/routes/post");
 const usersRoutes = require("./src/api/routes/user");
 const cors = require('cors');
+const { musicScraper } = require("./src/utils/musicScraper");
 
 const app = express();
 
@@ -26,6 +27,7 @@ app.use("/api/albums", albumsRoutes);
 app.use("/api/circles", circlesRoutes);
 app.use("/api/posts", postsRoutes);
 app.use("/api/users", usersRoutes);
+app.use("/api/scrape", musicScraper);
 
 app.use("*/", (req, res, next) => {
   return res.status(404).json("Route not found")

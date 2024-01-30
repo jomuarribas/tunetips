@@ -54,7 +54,7 @@ export const Explore = () => {
     loadResponse.innerHTML = "Cargando discos..."
     searchAlbums.appendChild(loadResponse);
     try {
-      const response = await fetch(`http://localhost:3500/scrape/${e.target.form[0].value}`);
+      const response = await fetch(`http://localhost:3000/api/scrape/${e.target.form[0].value}`);
       const data = await response.json();
 
       if (response.ok) {
