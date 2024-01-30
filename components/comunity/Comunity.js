@@ -77,7 +77,55 @@ export const comunity = () => {
         allUsers.appendChild(oneUserDiv);
         oneUserDiv.appendChild(oneUser);
         oneUserDiv.appendChild(oneUserUsername);
+
+        oneUser.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          if (document.querySelector(".popUpAlbums")) {
+            const popUpAlbums2 = document.querySelector(".popUpAlbums");
+            popUpAlbums2.remove();
+          }
+          if (user.albums.length == 0) {
+            if (document.querySelector(".popUpAlbums")) {
+              const popUpAlbums2 = document.querySelector(".popUpAlbums");
+              popUpAlbums2.remove();
+            } else { return }
+          }
+
+          const popUpAlbums = document.createElement("div");
+          popUpAlbums.className = "popUpAlbums";
+          posts.parentNode.insertBefore(popUpAlbums, posts);
+
+          const closeText = document.createElement("p");
+          closeText.textContent = "Close X";
+          popUpAlbums.appendChild(closeText);
+          closeText.addEventListener("click", (e) => {
+            e.preventDefault();
+            const popUpAlbums2 = document.querySelector(".popUpAlbums")
+            popUpAlbums2.remove();
+          });
+
+          const popUpUserText = document.createElement("h3");
+          popUpUserText.textContent = `-- ${user.username} --`;
+          popUpAlbums.appendChild(popUpUserText);
+
+          const albumDiv = document.createElement("div");
+          const userAlbums = user.albums
+          for (const album of userAlbums) {
+            const albumImgDiv = document.createElement("div");
+            const albumImg = document.createElement("img");
+            albumImg.src = album.img
+            albumDiv.appendChild(albumImgDiv);
+            albumImgDiv.appendChild(albumImg);
+            const albumText = document.createElement("p");
+            albumText.innerHTML = `${album.album.slice(3)}`
+            albumImgDiv.appendChild(albumText);
+          }
+          popUpAlbums.appendChild(albumDiv)
+
+        });
       }
+
 
     } catch (error) {
       console.error('Error al obtener la lista de usuarios:', error.message);
@@ -127,6 +175,8 @@ export const comunity = () => {
   };
   textPosts()
 
+  const textFormTitle = document.createElement('h3');
+  textFormTitle.innerHTML = "¿Que quieres decir?";
   const textForm = document.createElement("form");
   const textareaElement = document.createElement('textarea');
   textareaElement.rows = 4;
@@ -137,6 +187,7 @@ export const comunity = () => {
 
   posts.appendChild(textDiv);
   posts.appendChild(textForm);
+  textForm.appendChild(textFormTitle);
   textForm.appendChild(textareaElement);
   textForm.appendChild(textButton);
 

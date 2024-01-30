@@ -68,6 +68,12 @@
   border-radius: 100%;
   border: 1px solid #bcc603;
   width: 100%;
+  cursor: pointer;
+}
+
+.allUsers > div > img:hover {
+  transform: scale(0.9);
+  transition: 250ms;
 }
 
 .allUsers > div > p {
@@ -111,7 +117,7 @@
 .posts > form {
   display: flex;
   flex-wrap: wrap;
-  align-items:end;
+  align-items: center;
   gap: 20px;
 }
 
@@ -127,3 +133,57 @@
   margin: 0 auto;
 }
 
+.posts > form > h3 {
+  margin-top: 0 auto;
+  margin: 0 auto;
+}
+
+.popUpAlbums {
+  background-color: #bcc6031e ;
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 20px;
+}
+
+.popUpAlbums > div {
+  display: flex;
+  padding: 10px;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 0;
+  justify-content: center;
+}
+
+.popUpAlbums > p{
+  margin: 0;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.popUpAlbums > h3{
+  margin: 0;
+  margin-top: 5px;
+  color: #bcc603;
+}
+
+.popUpAlbums > p:hover{
+  color:#bcc603;
+  transition: 250ms;
+}
+
+.popUpAlbums > div > div{
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+}
+
+.popUpAlbums > div > div > img{
+  width: 100%;
+  border-radius: 10px;
+}
+.popUpAlbums > div > div > p{
+  font-size: 12px;
+  margin: 0;
+  text-align: center;
+}

@@ -82,3 +82,26 @@
 .albumId {
   display: none;
 }
+
+@media screen and (max-width: 700px) {
+  .myAlbums div {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    max-width: 150px;
+    height: 100%;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.018);
+    padding: 10px;
+    border-radius: 10px; 
+  }
+  .myAlbums p {
+    font-size: 12px;
+  
+  }
+  
+  .myAlbums h3 {
+    font-size: 15px;
+  }
+}

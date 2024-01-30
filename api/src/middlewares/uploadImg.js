@@ -6,7 +6,7 @@ const userImg = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
     folder: "TuneTips/userImg",
-    allowedFormats: ["jpg", "png", "jpeg", "gif"],
+    allowedFormats: ["jpg", "png", "jpeg", "gif", "webp"],
     transformation: [{ width: 200, height: 200, crop: 'fill' }]
   }
 });
