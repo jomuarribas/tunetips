@@ -24,7 +24,6 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/api/albums", albumsRoutes);
-app.use("/api/circles", circlesRoutes);
 app.use("/api/posts", postsRoutes);
 app.use("/api/users", usersRoutes);
 app.use("/api/scrape", musicScraper);

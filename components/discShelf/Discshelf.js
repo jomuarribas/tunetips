@@ -69,7 +69,7 @@ export const discShelf = () => {
           const artistName = document.createElement('h3');
           artistName.innerHTML = data.artist;
           const albumTitle = document.createElement('p');
-          albumTitle.innerHTML = `Album: ${data.album}`;
+          albumTitle.innerHTML = `Album: ${data.album.slice(3)}`;
           const buttonDel = document.createElement('button');
           buttonDel.textContent = 'Eliminar album';
           const albumId = document.createElement('p');

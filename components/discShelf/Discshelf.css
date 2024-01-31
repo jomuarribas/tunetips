@@ -13,24 +13,24 @@
   border-radius: 100%;
   margin: 0 auto;
   margin-top: 20px;
-  border: 1px solid rgb(255, 255, 255);
-  box-shadow: #bcc603 0px 0px 15px -2px;
+  border: 1px solid var(--tt-secundary-color);
+  box-shadow: var(--tt-primary-color) 0px 0px 15px -2px;
 }
 .discShelf > h3 {
-  color: white;
+  color: var(--tt-secundary-color);
   margin: 0 auto;
   font-size: 15px;
   margin-top: 15px;
 }
 
 .discShelfInfo {
-  color: white;
+  color: var(--tt-secundary-color);
   padding: 0px 25px;
   margin-top: -10px;
 }
 
 .discShelfTitle {
-  color: #bcc603;
+  color: var(--tt-primary-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,11 +58,11 @@
 
 .myAlbums img {
   width: 100%;
-  box-shadow: #bcc603 0px 0px 15px -7px;
+  box-shadow: var(--tt-primary-color) 0px 0px 15px -7px;
   border-radius: 10px;
 }
 .myAlbums p {
-  color: white;
+  color: var(--tt-secundary-color);
   margin-top: 5px;
   font-size: 14px;
   align-items: center;
@@ -70,7 +70,7 @@
 }
 
 .myAlbums h3 {
-  color: #bcc603;
+  color: var(--tt-primary-color);
   margin-top: 5px;
   margin-bottom: 0px;
 }

@@ -20,7 +20,7 @@
 }
 
 .loginForm {
-  background-color: rgb(255, 255, 255);
+  background-color: var(--tt-secundary-color);
   padding: 50px;
   padding-top: 30px;
   border-radius: 20px;
@@ -64,7 +64,7 @@
 }
 
 #userForm > p:hover {
-  color: #bcc603;
+  color: var(--tt-primary-color);
   transition: 200ms;
 }
 

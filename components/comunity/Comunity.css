@@ -14,7 +14,7 @@
   margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 20px;
-  color: white;
+  color: var(--tt-secundary-color);
   width: 100%;
 }
 
@@ -24,8 +24,8 @@
 
 .comunityImgDiv > img {
   border-radius: 100%;
-  border: 1px solid white;
-  box-shadow: #bcc603 0px 0px 15px -2px;
+  border: 1px solid var(--tt-secundary-color);
+  box-shadow: var(--tt-primary-color) 0px 0px 15px -2px;
   width: 150px;
 }
 
@@ -38,7 +38,7 @@
 
 .comunityInfoDiv > h3 {
   font-size: 19px;
-  color: #bcc603;
+  color: var(--tt-primary-color);
 }
 
 .comunityInfoDiv > p:last-child {
@@ -50,8 +50,8 @@
   flex-wrap: wrap;
   width: 100%;
   gap: 20px;
-  border-top: #bcc603 1px solid;
-  border-bottom: #bcc603 1px solid;
+  border-top: var(--tt-primary-color) 1px solid;
+  border-bottom: var(--tt-primary-color) 1px solid;
   padding-bottom: 10px;
   padding-top: 10px;
 }
@@ -66,7 +66,7 @@
 
 .allUsers > div > img {
   border-radius: 100%;
-  border: 1px solid #bcc603;
+  border: 1px solid var(--tt-primary-color);
   width: 100%;
   cursor: pointer;
 }
@@ -164,11 +164,11 @@
 .popUpAlbums > h3{
   margin: 0;
   margin-top: 5px;
-  color: #bcc603;
+  color: var(--tt-primary-color);
 }
 
 .popUpAlbums > p:hover{
-  color:#bcc603;
+  color:var(--tt-primary-color);
   transition: 250ms;
 }
 
