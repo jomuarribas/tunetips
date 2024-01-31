@@ -4,7 +4,6 @@ const express = require("express");
 const cloudinary = require("cloudinary").v2;
 const { tuneTipsDb } = require("./src/config/tuneTipsDb");
 const albumsRoutes = require("./src/api/routes/album");
-const circlesRoutes = require("./src/api/routes/circle");
 const postsRoutes = require("./src/api/routes/post");
 const usersRoutes = require("./src/api/routes/user");
 const cors = require('cors');
