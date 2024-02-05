@@ -97,7 +97,7 @@ export const comunity = () => {
           posts.parentNode.insertBefore(popUpAlbums, posts);
 
           const closeText = document.createElement("p");
-          closeText.textContent = "Close X";
+          closeText.textContent = "Cerrar X";
           popUpAlbums.appendChild(closeText);
           closeText.addEventListener("click", (e) => {
             e.preventDefault();

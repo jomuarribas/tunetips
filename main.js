@@ -1,4 +1,5 @@
 import { comunity } from './components/comunity/Comunity.js';
+import { Footer } from './components/footer/Footer.js';
 import { Header } from './components/header/Header';
 import { login } from './components/login/login.js'
 import { Nav } from './components/nav/Nav';
@@ -15,9 +16,7 @@ export const homePage = () => {
     main.id = 'main'
     document.body.appendChild(main)
     comunity();
-    const footer = document.createElement('footer');
-    footer.id = 'footer'
-    document.body.appendChild(footer);
+    Footer();
   }
 };
 

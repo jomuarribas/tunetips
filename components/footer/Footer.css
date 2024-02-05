@@ -1,0 +1,13 @@
+#footer {
+  max-width: 1200px;
+  border-top: 1px solid var(--tt-primary-color);
+  margin: 10px auto;
+  height: 20px;
+  text-align: center;
+}
+
+#footer p {
+  color: var(--tt-primary-color);
+  font-size: 12px;
+  padding-bottom: 10px;
+}
