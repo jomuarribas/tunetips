@@ -23,7 +23,7 @@ export const register = () => {
   register.appendChild(formDiv);
   formDiv.appendChild(userForm);
 
-  const createInput = (labelText, inputType, inputName, isRequired = false) => {
+  const createInput = (labelText, inputType, inputName, isRequired = false, minlength = 3) => {
     const label = document.createElement('label');
     label.textContent = labelText;
     userForm.appendChild(label);
@@ -31,6 +31,10 @@ export const register = () => {
     const input = document.createElement('input');
     input.type = inputType;
     input.name = inputName;
+
+    if (inputType === 'text' || inputType === 'password') {
+      input.minLength = minlength
+    }
     if (isRequired) {
       input.required = true;
     }
@@ -41,13 +45,16 @@ export const register = () => {
   createInput('Nombre:', 'text', 'name', true);
   createInput('Apellidos:', 'text', 'surname');
   createInput('Correo electrónico:', 'email', 'email', true);
-  createInput('Contraseña:', 'password', 'password', true);
+  createInput('Contraseña:', 'password', 'password', true, 8);
   createInput('Imagen de perfil:', 'file', 'img');
 
   const submitBtn = document.createElement('button');
-  submitBtn.type = 'button';
+  submitBtn.type = 'submit';
   submitBtn.textContent = 'Registrar';
-  submitBtn.addEventListener('click', async () => {
+  userForm.appendChild(submitBtn);
+
+  userForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
     try {
       loaderOn();
       const formData = new FormData(userForm);
@@ -57,13 +64,15 @@ export const register = () => {
       });
 
       if (!response.ok) {
-        loaderOff()
-        Swal.fire({
-          title: "Lo sentimos!",
-          text: "Tu usuario no ha podido registrarse. Inténtalo de nuevo!",
-          icon: "error"
+        loaderOff();
+        return response.json().then(data => {
+          Swal.fire({
+            title: "Lo sentimos!",
+            text: data.error,
+            icon: "error"
+          });
+          throw new Error(errorMessage);
         });
-        throw new Error(`Error al registrar usuario: ${response.status} - ${response.statusText}`);
       }
 
       if (response.ok) {
@@ -81,16 +90,13 @@ export const register = () => {
 
     } catch (error) {
       loaderOff();
-      console.error('Error al registrar usuario:', error.message);
       Swal.fire({
         title: "Lo sentimos!",
-        text: "Tu usuario no ha podido registrarse. Inténtalo de nuevo!",
+        text: `Error al registrar usuario`,
         icon: "error"
       });
     }
   });
-
-  userForm.appendChild(submitBtn);
 
   const returnLogin = document.createElement("p");
   returnLogin.innerHTML = "Volver al login"

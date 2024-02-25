@@ -63,13 +63,15 @@ export const login = () => {
       });
 
       if (!response.ok) {
-        loaderOff()
-        Swal.fire({
-          title: "Lo sentimos!",
-          text: "Tu usuario no ha podido loguearse. Inténtalo de nuevo!",
-          icon: "error"
+        loaderOff();
+        return response.json().then(data => {
+          Swal.fire({
+            title: "Lo sentimos!",
+            text: data.error,
+            icon: "error"
+          });
+          throw new Error(errorMessage);
         });
-        throw new Error(`Error al hacer login: ${response.status} - ${response.statusText}`);
       } else {
         loaderOff()
         const data = await response.json();

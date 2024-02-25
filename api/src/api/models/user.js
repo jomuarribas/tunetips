@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema(
     password: { type: String, trim: true, required: true },
     img: { type: String },
     circle: { type: mongoose.Schema.Types.ObjectId, ref: "Circle" },
-    rol: { type: String, enum: ["superadmin", "admin", "user"], trim: true, default: "user", required: true },
+    rol: { type: String, enum: ["admin", "user"], trim: true, default: "user", required: true },
     albums: [{ type: mongoose.Schema.Types.ObjectId, ref: "Album" }],
     posts: [{ type: mongoose.Schema.Types.ObjectId, ref: "Post" }]
   },

@@ -14,7 +14,6 @@ const getAlbums = async (req, res, next) => {
 // GET ALBUM
 const getOneAlbum = async (req, res, next) => {
   try {
-    console.log(req.params.id);
     const oneAlbum = await Album.findById(req.params.id)
     return res.status(200).json(oneAlbum);
 

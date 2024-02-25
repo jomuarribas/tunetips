@@ -28,7 +28,6 @@ export const User = () => {
   const userName = document.createElement('p');
   const fullName = document.createElement('p');
   const email = document.createElement('p');
-  const rol = document.createElement('p');
   const logOut = document.createElement('button');
   logOut.textContent = 'Cerrar sesión';
   const deleteUser = document.createElement('p');
@@ -43,7 +42,6 @@ export const User = () => {
       userName.innerHTML = `Nombre de usuario: <span class="userInfo">${user.username}</span>`
       fullName.innerHTML = `Nombre: <span class="userInfo">${user.name} ${user.surname}</span>`
       email.innerHTML = `email: <span class="userInfo">${user.email}</span>`
-      rol.innerHTML = `Rol: <span class="userInfo">${user.rol}</span>`
 
     } catch (error) {
     }
@@ -62,7 +60,6 @@ export const User = () => {
   userInfoDiv.appendChild(userName);
   userInfoDiv.appendChild(fullName);
   userInfoDiv.appendChild(email);
-  userInfoDiv.appendChild(rol);
   userInfoDiv.appendChild(logOut);
   userInfoDiv.appendChild(deleteUser);
 

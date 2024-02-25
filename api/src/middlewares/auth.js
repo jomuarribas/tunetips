@@ -13,7 +13,7 @@ const isUser = async (req, res, next) => {
     const { id } = verifyToken(parsedToken);
     const user = await User.findById(id);
 
-    if (user.rol === "user") {
+    if (user.rol === "user" || user.rol === "admin") {
       user.password = null;
       req.user = user;
       next();
@@ -27,4 +27,30 @@ const isUser = async (req, res, next) => {
   }
 };
 
-module.exports = { isUser };
+const isAdmin = async (req, res, next) => {
+  try {
+    const token = req.headers.authorization
+
+    if (!token) {
+      return res.status(400).json("No estás autorizado");
+    };
+
+    const parsedToken = token.replace("Bearer ", "");
+    const { id } = verifyToken(parsedToken);
+    const user = await User.findById(id);
+
+    if (user.rol === "admin") {
+      user.password = null;
+      req.user = user;
+      next();
+    } else {
+      return res.status(400).json('Tienes que ser administrador para acceder a este contenido');
+    }
+
+
+  } catch (error) {
+    return res.status(400).json("No estás autorizado");
+  }
+};
+
+module.exports = { isUser, isAdmin };

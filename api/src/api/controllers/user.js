@@ -17,7 +17,6 @@ const getUsers = async (req, res, next) => {
 // GET USER
 const getUser = async (req, res, next) => {
   try {
-    console.log(req.params.id);
     const oneUser = await User.findById(req.params.id)
     return res.status(200).json(oneUser);
 
@@ -34,16 +33,19 @@ const registerUser = async (req, res, next) => {
       addUser.img = req.file.path;
     }
     const userDuplicated = await User.findOne({ username: req.body.username });
+    const emailDuplicated = await User.findOne({ email: req.body.email });
 
     if (userDuplicated) {
-      return res.status(400).json('El usuario ya está registrado');
+      return res.status(400).json({ error: 'Este usuario ya existe' });
+    } else if (emailDuplicated) {
+      return res.status(400).json({ error: 'El email que has introducido ya existe' });
     } else {
       const saveUser = await addUser.save();
       return res.status(201).json('Usuario registrado');
     }
 
   } catch (error) {
-    return res.status(404).json(error.mesage);
+    return res.status(400).json(error.message);
   }
 };
 
@@ -56,10 +58,10 @@ const loginUser = async (req, res, next) => {
         const token = generateSign(user._id);
         return res.status(200).json({ user, token });
       } else {
-        return res.status(400).json('El usuario o contraseña no existen');
+        return res.status(400).json({ error: 'El usuario o contraseña no existen'});
       }
     } else {
-      return res.status(400).json('El usuario o contraseña no existen');
+      return res.status(400).json({ error: 'El usuario o contraseña no existen' });
     };
 
   } catch (error) {
